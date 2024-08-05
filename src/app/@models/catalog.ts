@@ -5,7 +5,12 @@ export interface Catalog {
     cca2: string;
     cca3: string;
     idd: IDD;
-    area: number
+    area: number;
+    capital: string[];
+    continents: string[];
+    timezones: string[];
+    region: string;
+    startOfWeek: string;
 }
 
 export interface Name {

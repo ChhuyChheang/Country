@@ -5,6 +5,7 @@ import { Catalog } from 'src/app/@models/catalog';
 import Fuse from 'fuse.js';
 import { MatDialog } from '@angular/material/dialog';
 import { CountriesCatalogService } from 'src/app/@service/countries-catalog.service';
+import { CountriesCatalogPopUpComponent } from '../countries-catalog-pop-up/countries-catalog-pop-up.component';
 
 @Component({
   selector: 'app-countries-catalog',
@@ -64,5 +65,16 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
     this.getCountriesCatalog();
   }
 
+  openDialog(area: number): void {
+    // I choose area to check condtion because it's unigue
+    const countryDetail = this.countiesCatalog.find((value) => value.area === area);
+    const dialogRef = this.dialog.open(CountriesCatalogPopUpComponent, {
+      width: '900px',
+      height: '600px',
+      data: { detail: countryDetail },
+    });
 
+    dialogRef.afterClosed().subscribe(() => {
+    });
+  }
 }

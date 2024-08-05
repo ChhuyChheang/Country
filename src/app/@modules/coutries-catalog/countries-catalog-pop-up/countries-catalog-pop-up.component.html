@@ -1,0 +1,59 @@
+<div fxFlex="100" fxLayout="column">
+    <div fxFlex="100" fxLayout="row" fxLayoutGap="20px">
+        <mat-form-field appearance="outline">
+            <mat-label>2 Character Country Code</mat-label>
+            <input matInput [value]="countryDetail.cca2" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>2 Character Country Code</mat-label>
+            <input matInput [value]="countryDetail.cca3" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Country Calling Codes</mat-label>
+            <input matInput [value]="countryDetail.idd.root" readonly>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Country Name</mat-label>
+        <input matInput [value]="countryDetail.name.official" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Native Name</mat-label>
+        <input matInput placeholder="Native Name" [value]="countryDetail.name.common" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Country Calling Codes</mat-label>
+        <input matInput [value]="countryDetail.altSpellings" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Capital</mat-label>
+        <input matInput [value]="countryDetail.capital" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Region</mat-label>
+        <input matInput [value]="countryDetail.region" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Time zones</mat-label>
+        <input matInput [value]="countryDetail.timezones" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Continents</mat-label>
+        <input matInput [value]="countryDetail.continents" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Start of Week</mat-label>
+        <input matInput [value]="countryDetail.startOfWeek" readonly>
+    </mat-form-field>
+        
+</div>
