@@ -17,10 +17,14 @@ import { MatDialogModule} from '@angular/material/dialog';
 import { CountriesCatalogPopUpComponent } from './countries-catalog-pop-up/countries-catalog-pop-up.component';
 import { MatSelectModule } from '@angular/material/select';
 
+const components = [
+  CountriesCatalogComponent,
+  CountriesCatalogPopUpComponent
+]
+
 @NgModule({
   declarations: [
-    CountriesCatalogComponent,
-    CountriesCatalogPopUpComponent
+    components
   ],
   imports: [
     CommonModule,
@@ -39,6 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     MatInputModule,
     MatSelectModule
-  ]
+  ],
+  exports: [components]
 })
 export class CoutriesCatalogModule { }
