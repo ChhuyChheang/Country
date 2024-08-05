@@ -52,6 +52,7 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
 
   public onSearch(event: Event) {
     this.searchValue = (event.target as HTMLInputElement).value;
+    //if search value is empty, we need to invoke country catalog API
     if (!this.searchValue) {
       return this.getCountriesCatalog();
     }
@@ -59,13 +60,13 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
     this.dataSource.data = result.map(res => res.item);
   }
 
-  clearSearch(input: HTMLInputElement) {
+  public clearSearch(input: HTMLInputElement) {
     input.value = '';
     this.searchValue = '';
     this.getCountriesCatalog();
   }
 
-  openDialog(area: number): void {
+  public openDialog(area: number): void {
     // I choose area to check condtion because it's unigue
     const countryDetail = this.countiesCatalog.find((value) => value.area === area);
     const dialogRef = this.dialog.open(CountriesCatalogPopUpComponent, {
@@ -77,4 +78,5 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(() => {
     });
   }
+  
 }
