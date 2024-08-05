@@ -14,10 +14,12 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule} from '@angular/material/dialog';
+import { CountriesCatalogPopUpComponent } from './countries-catalog-pop-up/countries-catalog-pop-up.component';
 
 @NgModule({
   declarations: [
     CountriesCatalogComponent,
+    CountriesCatalogPopUpComponent
   ],
   imports: [
     CommonModule,
