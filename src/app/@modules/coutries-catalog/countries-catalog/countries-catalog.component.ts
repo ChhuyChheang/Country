@@ -47,6 +47,7 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
       this.countiesCatalog = res;
       this.dataSource.data = this.countiesCatalog;
       this.fuse.setCollection(this.countiesCatalog);
+      this.onSortChange('asc');
     });
   }
 
@@ -78,5 +79,17 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(() => {
     });
   }
-  
+
+  public onSortChange(order?: string) {
+    this.dataSource.data = this.dataSource.data.sort((a, b) => {
+      let comparison = 0;
+      if (a.name.official > b.name.official) {
+        comparison = 1;
+      } else if (a.name.official < b.name.official) {
+        comparison = -1;
+      }
+      return order === 'asc' ? comparison : -comparison;
+    });
+  }
+
 }
