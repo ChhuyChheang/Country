@@ -3,13 +3,22 @@
     <div fxFlex="100">
       <h1>Counties Catalog</h1>
     </div>
-    <div fxFlex="100">
+    <div fxFlex="100" fxLayout="row" fxLayoutGap="10px">
+      <mat-form-field appearance="outline" class="sort-content">
+        <mat-label>Sort by</mat-label>
+        <mat-select value="asc" (selectionChange)="onSortChange($event.value)">
+          <mat-option value="asc">Asc</mat-option>
+          <mat-option value="desc">Desc</mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <mat-form-field appearance="outline">
         <mat-label>Search by Country Name</mat-label>
         <input matInput (keyup)="onSearch($event)" placeholder="" #input>
         <mat-icon *ngIf="!searchValue" matSuffix color="primary">search</mat-icon>
         <mat-icon *ngIf="searchValue" matSuffix color="warn" (click)="clearSearch(input)">close</mat-icon>
       </mat-form-field>
+
     </div>
   </div>
 

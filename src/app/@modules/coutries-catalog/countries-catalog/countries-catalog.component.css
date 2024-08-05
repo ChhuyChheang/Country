@@ -1,13 +1,17 @@
 
+table, mat-form-field, mat-paginator {
+    width: 100%;
+}
+
 img {
     width: 1rem;
     height: 1rem;
 }
 
-table, mat-form-field, mat-paginator {
-    width: 100%;
-}
-
 mat-icon {
     cursor: pointer;
+}
+
+.sort-content {
+    width: 100px;
 }
