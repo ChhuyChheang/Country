@@ -21,7 +21,10 @@ export class CountriesCatalogPopUpComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.countryDetail)  
+  }
+
+  public closePopup() {
+    this.dialogRef.close();
   }
 
 }

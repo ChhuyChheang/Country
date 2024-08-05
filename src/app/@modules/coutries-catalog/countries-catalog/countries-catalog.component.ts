@@ -85,7 +85,8 @@ export class CountriesCatalogComponent implements OnInit, AfterViewInit {
       let comparison = 0;
       if (a.name.official > b.name.official) {
         comparison = 1;
-      } else if (a.name.official < b.name.official) {
+      } 
+      else {
         comparison = -1;
       }
       return order === 'asc' ? comparison : -comparison;
